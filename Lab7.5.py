@@ -24,7 +24,6 @@ try:
                 mt +=" "
                 display.lcd_clear()
                 display.lcd_display_string(mt+"LAB 7", 1)
-                display.lcd_display_string(str(index),2)
             sleep(0.5)
         elif GPIO.event_detected(SW2):
             if index-1 >= 0:
@@ -32,9 +31,7 @@ try:
                 mt = mt[1:]
                 display.lcd_clear()
                 display.lcd_display_string(mt+"LAB 7", 1)
-                display.lcd_display_string(str(index),2)
             sleep(0.5)
-
 except KeyboardInterrupt:
     GPIO.remove_event_detect(SW1)
     GPIO.remove_event_detect(SW2)
